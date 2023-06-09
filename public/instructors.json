@@ -1,0 +1,83 @@
+
+[
+    {
+        "name": "Saira Sarif",
+        "image": "https://www.edarabia.com/wp-content/uploads/2015/11/7-ways-to-become-the-person-everyone-respects.jpg",
+        "email": "saira@gmail.com",
+        "bio": "Saira Sarif is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 76,
+        "students": 236
+    },
+    {
+        "name": "Mr Steve",
+        "image": "https://thumbs.dreamstime.com/b/closeup-shot-handsome-caucasian-entrepreneur-glasses-blue-shirt-looking-away-happy-smile-showing-white-teeth-175185337.jpg",
+        "email": "steve@gmail.com",
+        "bio": "Mr Steve is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 76,
+        "students": 234
+    },
+    {
+        "name": "Mr Stephen",
+        "image": "https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "email": "stephen@gmail.com",
+        "bio": "Mr Stephen is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 26,
+        "students": 244
+    },
+    {
+        "name": "Sarah Ali",
+        "image": "https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg?w=2000",
+        "email": "sarah@gmail.com",
+        "bio": "Sarah Ali is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 66,
+        "students": 134
+    },
+    {
+        "name": "David Johnson",
+        "image": "https://st4.depositphotos.com/3396639/20805/i/600/depositphotos_208057600-stock-photo-portrait-cheerful-hipster-guy-spectacles.jpg",
+        "email": "david@gmail.com",
+        "bio": "David Johnson is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 36,
+        "students": 229
+    },
+    {
+        "name": "Sofia Ramirez",
+        "image": "https://media.istockphoto.com/id/1325242956/photo/cropped-portrait-of-an-attractive-young-businesswoman-in-a-wheelchair-using-her-tablet-in-the.jpg?s=612x612&w=0&k=20&c=VBYpAHcvJnLACLsQpmaySRbr1zzrOFq0pTecKtrOUxE=",
+        "email": "ramirez@gmail.com",
+        "bio": "Sofia Ramirez is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 56,
+        "students": 413
+    },
+    {
+        "name": "Selina Rodrigez",
+        "image": "https://media.istockphoto.com/id/536018819/photo/portrait-of-a-mid-adult-woman.jpg?s=612x612&w=0&k=20&c=iOtOEUsICQEWnScIZqDdJIUgWhYE1616Z8NgKE-uTJo=",
+        "email": "selina@gmail.com",
+        "bio": "Selina Rodrigez is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 56,
+        "students": 313
+    },
+    {
+        "name": "Daniel Morgan",
+        "image": "https://media.istockphoto.com/id/536018819/photo/portrait-of-a-mid-adult-woman.jpg?s=612x612&w=0&k=20&c=iOtOEUsICQEWnScIZqDdJIUgWhYE1616Z8NgKE-uTJo=",
+        "email": "morgan123@gmail.com",
+        "bio": "Daniel Morgan is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 56,
+        "students": 253
+    },
+    {
+        "name": "Daniel Morgan",
+        "image": "https://media.istockphoto.com/id/536018819/photo/portrait-of-a-mid-adult-woman.jpg?s=612x612&w=0&k=20&c=iOtOEUsICQEWnScIZqDdJIUgWhYE1616Z8NgKE-uTJo=",
+        "email": "morgan123@gmail.com",
+        "bio": "Daniel Morgan is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 56,
+        "students": 293
+    },
+    {
+        "name": "Jason Wilson",
+        "image": "https://media.istockphoto.com/id/1138562953/photo/portrait-of-casual-smiling-man.jpg?s=612x612&w=0&k=20&c=xKkJLi2SO4el4RhGmBaxI5hhRkROvVrDAkRHnTm0BB4=",
+        "email": "wilson123@gmail.com",
+        "bio": "Jason Wilson is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.",
+        "totalClass": 106,
+        "students": 393
+    }
+]
