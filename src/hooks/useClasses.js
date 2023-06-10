@@ -10,6 +10,6 @@ const useClasses = () => {
             setClasses(data)
         })
     }, [])
-    return [classes]
+    return [classes];
 }
 export default useClasses 
