@@ -40,7 +40,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end flex items-center gap-2"> <img  className="w-10 rounded-full" src="https://as1.ftcdn.net/v2/jpg/01/49/81/52/1000_F_149815203_Og27WLpK7bCVTz9uDRic1bSxtPnFGguV.jpg" />
-                    <button className="btn bg-[#E8E8E8] border-0 border-[#48a5af] border-t-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]">Login</button>
+                    <button className="btn bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]">Login</button>
                     </div>
                 </div>
             </div>
