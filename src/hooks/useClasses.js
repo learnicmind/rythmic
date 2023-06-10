@@ -12,4 +12,4 @@ const useClasses = () => {
     }, [])
     return [classes];
 }
-export default useClasses 
+export default useClasses;
