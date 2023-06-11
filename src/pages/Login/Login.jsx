@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -32,6 +33,10 @@ const Login = () => {
                     </form>
                     <div className='flex justify-center pb-2'>
                         <p><small>New in RyThmic?<Link to="/signup" className='text-[#59dae9] font-bold'> SignUp</Link></small></p>
+                    </div>
+                    <div className="divider">OR</div>
+                    <div className="flex items-center justify-center pb-6 pt-2">
+                        <FaGoogle className="cursor-pointer text-2xl" />
                     </div>
 
                 </div>
