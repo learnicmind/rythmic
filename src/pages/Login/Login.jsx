@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Login = () => {
+
+    const {googleSignin} = useContext(AuthContext);
+
+    const handleGoogleLogin = () => {
+        googleSignin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+    }
+
+
+
+
+
     return (
         <div className="hero min-h-screen bg-slate-950 md:pt-24 pb-6">
 
@@ -36,7 +53,7 @@ const Login = () => {
                     </div>
                     <div className="divider">OR</div>
                     <div className="flex items-center justify-center pb-6 pt-2">
-                        <FaGoogle className="cursor-pointer text-2xl" />
+                        <FaGoogle onClick={handleGoogleLogin} className="cursor-pointer text-2xl" />
                     </div>
 
                 </div>
