@@ -1,8 +1,17 @@
+import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
+
 
 
 const SignUp = () => {
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data)
+    };
+
     return (
         <div className="hero min-h-screen bg-slate-950 md:pt-24 pb-6">
             <div className="hero-content flex-col lg:flex-row md:gap-40">
@@ -19,12 +28,13 @@ const SignUp = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body bg-transparent">
                         <h1 className="text-3xl text-center font-bold text-[#59dae9]">Register</h1>
-                        <form onSubmit={handleSubmit(onSubmit)} className=''>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input name='name' {...register("name")} type="text" placeholder="Name" className="input input-bordered" />
+                                <input name='name' {...register("name", { required: true })} type="text" placeholder="Name" className="input input-bordered" />
+                                {errors.name && <span className="text-red-600">Name field is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -36,17 +46,20 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input name='email'  {...register("email", {required: true})} type="text" placeholder="email" className="input input-bordered" />
-                                {errors.email && <span className='text-red-500 text-sm'>This field is required</span>}
+                                <input name='email' {...register("email", { required: true })} type="text" placeholder="email" className="input input-bordered" />
+                                {errors.name && <span className="text-red-600">Email field is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' {...register("password", { required: true, 
-                                minLength: 8,
-                                pattern: /(?=.*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z])/
-                                })} type="password" placeholder="password" className="input input-bordered" />
+                                <input type="text" {...register("password", {
+                                    required: true,
+                                    minLength: 6,
+                                    pattern: /(?=.*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z])/
+                                })}
+                                    name="password" placeholder="password" className="input input-bordered" />
+                                {errors.password && <span className="text-red-600">Password Should to be Minimum 6 Characters, one uppercase, one lowercase and one special Character</span>}
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" value="SignUp" className="btn bg-[#E8E8E8]  border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]" />
@@ -55,9 +68,8 @@ const SignUp = () => {
                         <p className='my-4 font-bold text-center'>Already have an account?<Link className='text-[#59dae9] font-bold' to='/login'> Login</Link></p>
 
                     </div>
-                    <div className="divider">OR</div>
-                    <div className="flex items-center justify-center pb-6 pt-2">
-                        <FaGoogle className="cursor-pointer text-2xl" />
+                    <div>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

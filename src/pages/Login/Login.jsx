@@ -1,20 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
-import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 const Login = () => {
 
-    const {googleSignin} = useContext(AuthContext);
-
-    const handleGoogleLogin = () => {
-        googleSignin()
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-    }
+    
 
 
 
@@ -51,9 +42,8 @@ const Login = () => {
                     <div className='flex justify-center pb-2'>
                         <p><small>New in RyThmic?<Link to="/signup" className='text-[#59dae9] font-bold'> SignUp</Link></small></p>
                     </div>
-                    <div className="divider">OR</div>
-                    <div className="flex items-center justify-center pb-6 pt-2">
-                        <FaGoogle onClick={handleGoogleLogin} className="cursor-pointer text-2xl" />
+                    <div>
+                        <SocialLogin></SocialLogin>
                     </div>
 
                 </div>
