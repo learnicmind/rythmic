@@ -1,15 +1,54 @@
 import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 
 const SignUp = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register,reset, formState: { errors }, handleSubmit } = useForm();
+
+    const { createUser, updateUserprofile } = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
-        console.log(data)
+        
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggeduser = result.user;
+                console.log(loggeduser);
+                updateUserprofile(data.name, data.photo)
+                    .then(() => {
+                        const saveduser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveduser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        title: 'User Created Successfully.',
+                                        showClass: {
+                                            popup: 'animate__animated animate__fadeInDown'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__fadeOutUp'
+                                        }
+                                    })
+                                    
+                                    navigate('/login')
+                                }
+                            })
+                    })
+                    .catch(error => console.log(error))
+            })
     };
 
     return (
