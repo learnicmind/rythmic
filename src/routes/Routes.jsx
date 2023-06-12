@@ -5,10 +5,15 @@ import Instructors from "../pages/Instructors/Instructors";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Classes from "../pages/Classes/Classes";
+import Error404 from "../pages/Error404/Error404";
 
 
 
 export const router = createBrowserRouter([
+    {
+        path: "*",
+        element: <Error404></Error404>
+    },
     {
         path: '/',
         element: <Main></Main>,
