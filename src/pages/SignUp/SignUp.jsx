@@ -4,6 +4,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -53,6 +54,9 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-slate-950 md:pt-24 pb-6">
+            <Helmet>
+                <title>RyThmic | Sign Up</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row md:gap-40">
                 <div className="relative text-center lg:text-left w-1/2 ">
                     <div className="p-10">

@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -44,7 +45,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-slate-950 md:pt-24 pb-6">
-
+            <Helmet>
+                <title>RyThmic | Login</title>
+            </Helmet>
             <div className="hero-content flex gap-10 ">
                 <div className="text-center md:w-1/2 lg:text-left">
 

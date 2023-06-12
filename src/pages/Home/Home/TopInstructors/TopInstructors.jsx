@@ -13,8 +13,8 @@ const TopInstructors = () => {
             <div className="grid md:grid-cols-3 gap-6 my-10">
                 {
                     instructors.slice(0, 6).map(item => <div key={item._id} className='bg-slate-500 flex flex-col items-start rounded-lg pb-5 hover:scale-105' style={{ transition: '0.5s' }}>
-                            <img className="h-48 w-full rounded-sm" src={item.image} alt="" />
-                            <div className="p-3 bg-emerald-50 w-full">
+                            <img className="h-48 w-full rounded-lg" src={item.image} alt="" />
+                            <div className="p-3 rounded-lg bg-emerald-50 w-full">
                                 <h1 className="text-2xl">{item.class}</h1>
                                 <h3 className="text-xl font-bold">Instructor: {item.name}</h3>
                                 <h3 className="font-semibold">Total Student: {item.students}</h3>

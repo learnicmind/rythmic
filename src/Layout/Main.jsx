@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <div className="bg-gray-900">
+            <div className="bg-gray-950">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
