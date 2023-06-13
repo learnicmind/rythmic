@@ -71,19 +71,19 @@ const ManageUsers = () => {
 
     return (
         <div>
-            <h1 className='text-3xl font-semibold text-green-700 pb-5'>Manage {users.length} Users</h1>
+            <h1 className='text-3xl font-semibold text-[#59dae9] pb-5'>Manage {users.length} Users</h1>
 
-            <div className="overflow-x-auto rounded-t-xl">
+            <div className="overflow-x-auto rounded-t-xl border-0">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-lg text-white bg-[#44b066]'>
+                        <tr className='text-lg text-white bg-slate-950'>
                             <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Action</th>
-                            <th>Delete</th>
+                            <th className='text-[#59dae9]'>Name</th>
+                            <th  className='text-[#59dae9]'>Email</th>
+                            <th  className='text-[#59dae9]'>Role</th>
+                            <th  className='text-[#59dae9]'>Action</th>
+                            <th  className='text-[#59dae9]'>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 
 const NavBar = () => {
+
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+    }
 
     const navLinks = <>
         <li><Link className="text-lg font-semibold" to='/'>Home</Link></li>
@@ -39,10 +47,12 @@ const NavBar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <div className="navbar-end flex items-center gap-2"> <img className="w-10 rounded-full" src="https://as1.ftcdn.net/v2/jpg/01/49/81/52/1000_F_149815203_Og27WLpK7bCVTz9uDRic1bSxtPnFGguV.jpg" />
-                        <Link to='/login'>
+                    <div className="navbar-end flex items-center gap-2"> {user && <img title={user?.displayName} className="w-10 rounded-full" src="https://as1.ftcdn.net/v2/jpg/01/49/81/52/1000_F_149815203_Og27WLpK7bCVTz9uDRic1bSxtPnFGguV.jpg" />}
+                        {user ? <button onClick={handleLogOut} className="btn bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]">Logout</button>
+                        :
+                            <Link to='/login'>
                             <button className="btn bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]">Login</button>
-                        </Link>
+                        </Link>}
                     </div>
                 </div>
             </div>

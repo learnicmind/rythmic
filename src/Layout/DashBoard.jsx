@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle, FaHome, FaMoneyCheck, FaUsers } from 'react-icons/fa';
+import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle, FaComment, FaHome, FaMoneyCheck, FaUsers } from 'react-icons/fa';
 import useAdmin from '../hooks/useAdmin'
 import useInstructor from '../hooks/useInstructor';
 import useStudent from '../hooks/useStudents';
@@ -14,7 +14,7 @@ const Dashboard = () => {
     // console.log('student', isStudent);
 
     return (
-        <div className="drawer-mobile drawer lg:drawer-open">
+        <div className="drawer-mobile drawer lg:drawer-open bg-slate-900 text-[#59dae9]">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col m-5 md:m-16">
                 {/* Page content here */}
@@ -25,7 +25,7 @@ const Dashboard = () => {
             <div className="drawer-side">
 
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-[#44b066] ">
+                <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-slate-950 ">
                     {/* Sidebar content here */}
                     {
                         isAdmin && <>
@@ -41,7 +41,7 @@ const Dashboard = () => {
                             <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
                             </li>
                             <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
-                            <li><NavLink to='/dashboard/feedback'>Feedback</NavLink></li>
+                            <li><NavLink to='/dashboard/feedback'> <FaComment />Feedback</NavLink></li>
                         </>
                     }
 

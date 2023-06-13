@@ -54,9 +54,9 @@ const ClassCard = ({ cls }) => {
         }
     }
     return (
-        <div className="">
+        <div className={cls.seats === 0 ? 'bg-red-600 rounded-lg text-white  flex flex-col items-start  hover:scale-105' : ' bg-slate-500 flex flex-col items-start rounded-lg  pb-5 hover:scale-105'} style={{ transition: '0.5s' }}>
             <div className="text-center bg-gray-500 rounded-lg">
-                <img className="w-full h-64 " src={banner} alt="" />
+                <img className="w-full rounded-lg h-64 " src={banner} alt="" />
                 <div className="text-black">
                     <h2 className="text-xl font-bold text-[#59dae9] py-1">{className}</h2>
                     <h2 className="text-lg font-semibold">Instructor Name: {name}</h2>

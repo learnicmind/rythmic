@@ -39,13 +39,13 @@ const MyClasses = () => {
 
     return (
         <div>
-            <h1 className='text-3xl font-semibold text-green-700 pb-5'>My Selected Classes: {selectedClass.length}</h1>
+            <h1 className='text-3xl font-semibold text-[#59dae9] pb-5'>My Selected Classes: {selectedClass.length}</h1>
 
             <div className="overflow-x-auto rounded-t-xl">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-lg text-white bg-[#44b066]'>
+                        <tr className='text-lg text-[#59dae9] bg-slate-950'>
                             <th></th>
                             <th>Class</th>
                             <th>Title</th>
@@ -75,7 +75,8 @@ const MyClasses = () => {
                                     <td className='text-end'>$ {S_Class.price}</td>
                                     <td className='text-end'>{S_Class.seats}</td>
                                     <th>
-                                        <Link to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Pay</Link>
+                                         <Link to='/dashboard/payment'><button className="btn btn-sm bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]"
+                        >Pay</button></Link>
                                     </th>
                                     <th className='text-end'>
                                         <button onClick={() => handleDelete(S_Class)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
