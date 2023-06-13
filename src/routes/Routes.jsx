@@ -6,6 +6,10 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Classes from "../pages/Classes/Classes";
 import Error404 from "../pages/Error404/Error404";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/DashBoard";
+import MyClasses from "../pages/DashBoard/MyClasses/MyClasses";
+import ManageUsers from "../pages/DashBoard/ManageUsers/ManageUser";
 
 
 
@@ -39,7 +43,29 @@ export const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             }
         ]
-    }
+    },
+    {
+        path: 'dashboard',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+          {
+            path: 'myclasses',
+            element: <MyClasses></MyClasses>
+          },
+        //   {
+        //     path: 'payment',
+        //     element: <MyClasses></MyClasses>
+        //   },
+          {
+            path: 'allusers',
+            element: <ManageUsers></ManageUsers>
+          },
+        //   {
+        //     path: 'enrolledstudents',
+        //     element: <EnrolledClasses></EnrolledClasses>
+        //   }
+        ]
+      }
 ])
 
 
