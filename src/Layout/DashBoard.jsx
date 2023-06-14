@@ -1,13 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle, FaComment, FaHome, FaMoneyCheck, FaUsers } from 'react-icons/fa';
+import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle,  FaHome, FaMoneyCheck, FaPenSquare, FaUsers } from 'react-icons/fa';
 import useAdmin from '../hooks/useAdmin'
 import useInstructor from '../hooks/useInstructor';
-import useStudent from '../hooks/useStudents';
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
-    const [isStudent] = useStudent()
 
     // console.log('admin', isAdmin);
     // console.log('instructor', isInstructor);
@@ -26,34 +24,32 @@ const Dashboard = () => {
 
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-slate-950 ">
-                    {/* Sidebar content here */}
-                    {
-                        isAdmin && <>
-                            <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
-                        </>
-                    }
 
-                    {isInstructor &&
-                        <>
-                            <li><NavLink to='/dashboard/instructorhome'><FaHome /> Instructor Home</NavLink></li>
-                            <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
-                            </li>
-                            <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
-                            <li><NavLink to='/dashboard/feedback'> <FaComment />Feedback</NavLink></li>
-                        </>
-                    }
-
-                    {isStudent &&
-                        <>
-                            <li><NavLink to='/dashboard/userhome'><FaHome /> Student Home</NavLink></li>
-                            <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
-                            </li>
-                            <li><NavLink to='/dashboard/reservation'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment History</NavLink></li>
-                        </>
-                    }
+                    
+                        {
+                            isAdmin.admin ?
+                                <>
+                                    <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
+                                    <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
+                                    <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
+                                </>
+                                : isInstructor.instructor ?
+                                    <>
+                                        <li><NavLink to='/dashboard/instructorhome'><FaHome /> Instructor Home</NavLink></li>
+                                        <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
+                                        </li>
+                                        <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
+                                        <li><NavLink to='/dashboard/feedback'><FaPenSquare /> Feedback</NavLink></li>
+                                    </>
+                                    :
+                                    <>
+                                        <li><NavLink to='/dashboard/userhome'><FaHome /> Student Home</NavLink></li>
+                                        <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
+                                        </li>
+                                        <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
+                                        <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment</NavLink></li>
+                                    </>
+                        }
 
                     <li className="divider"></li>
 

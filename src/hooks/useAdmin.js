@@ -4,8 +4,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider"
 
 const useAdmin = () =>{
     const {user, loading} = useContext(AuthContext)
-    const {refetch, data: isAdmin = []} = useQuery({
-        queryKey: ['role', user?.email],
+    const {isLoading: isAdminLoading, data: isAdmin = {}} = useQuery({
+        queryKey: ['isAdmin', user?.email],
         enabled: !!user?.email &&!loading,
         queryFn: async () =>{
             if(user?.email){
@@ -14,7 +14,7 @@ const useAdmin = () =>{
             }
         },
     })
-    return [isAdmin]
+    return [isAdmin, isAdminLoading]
 }
 
 export default useAdmin;
