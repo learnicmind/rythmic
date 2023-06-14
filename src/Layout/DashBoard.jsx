@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle,  FaHome, FaMoneyCheck, FaPenSquare, FaUsers } from 'react-icons/fa';
+import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle,  FaHome, FaMoneyCheck, FaUsers } from 'react-icons/fa';
 import useAdmin from '../hooks/useAdmin'
 import useInstructor from '../hooks/useInstructor';
 import { Helmet } from 'react-helmet-async';
@@ -34,16 +34,16 @@ const Dashboard = () => {
                             isAdmin.admin ?
                                 <>
                                     <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
-                                    <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
+                                    <li><NavLink to='/dashboard/manageclasses'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
                                     <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
                                 </>
                                 : isInstructor.instructor ?
                                     <>
                                         <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
-                                        <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
+                                        <li><NavLink to='/dashboard/myclass'><FaChalkboardTeacher />My Classes</NavLink>
                                         </li>
                                         <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
-                                        <li><NavLink to='/dashboard/feedback'><FaPenSquare /> Feedback</NavLink></li>
+                                        
                                     </>
                                     :
                                     <>
