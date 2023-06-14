@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle,  FaHome, FaMoneyCheck, FaPenSquare, FaUsers } from 'react-icons/fa';
 import useAdmin from '../hooks/useAdmin'
 import useInstructor from '../hooks/useInstructor';
+import { Helmet } from 'react-helmet-async';
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
@@ -13,6 +14,9 @@ const Dashboard = () => {
 
     return (
         <div className="drawer-mobile drawer lg:drawer-open bg-slate-900 text-[#59dae9]">
+            <Helmet>
+                <title>RyThmic | Dashboard</title>
+            </Helmet>
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col m-5 md:m-16">
                 {/* Page content here */}
@@ -29,13 +33,13 @@ const Dashboard = () => {
                         {
                             isAdmin.admin ?
                                 <>
-                                    <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
+                                    <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
                                     <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
                                     <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
                                 </>
                                 : isInstructor.instructor ?
                                     <>
-                                        <li><NavLink to='/dashboard/instructorhome'><FaHome /> Instructor Home</NavLink></li>
+                                        <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
                                         <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
                                         </li>
                                         <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
@@ -43,7 +47,7 @@ const Dashboard = () => {
                                     </>
                                     :
                                     <>
-                                        <li><NavLink to='/dashboard/userhome'><FaHome /> Student Home</NavLink></li>
+                                        <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
                                         <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
                                         </li>
                                         <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> My Enrolled Classes</NavLink></li>

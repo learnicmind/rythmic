@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { FaChalkboardTeacher, FaTrashAlt, FaUserShield, FaUsers } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaTrashAlt, FaUserShield, } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
@@ -46,27 +46,36 @@ const ManageUsers = () => {
         })
     }
 
-    const handleStudent = user =>{
-        fetch(`http://localhost:5000/users/student/${user._id}`, {
-            method: 'PATCH'
-        })
-        .then(res => res.json())
-        .then(data =>{
-            if(data.modifiedCount){
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: `${user.name} is an Student!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  refetch()
+
+    
+
+    const handleDelete = user => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${user._id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount>0){
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        refetch();
+                    }
+                })
             }
         })
-    }
-
-    const handleDelete = () => {
-
     }
 
     return (
@@ -97,15 +106,13 @@ const ManageUsers = () => {
                                     <td>{user.role}</td>
                                     <th className='space-y-3 flex flex-col text-sm'>
                                         {
-                                            user.role === 'admin' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaUserShield/></button> : <button onClick={() => handleAdmin(user)} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Admin</button>
+                                            user.role === 'admin' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaUserShield/></button> : <button onClick={() => handleAdmin(user)} className="btn btn-sm bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]" style={{ transition: '.5s' }}>Admin</button>
                                         }
                                         {  user.role === 'instructor' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaChalkboardTeacher/></button> :
-                                            <button onClick={() => handleInstructor(user)} to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Instructor</button>
+                                            <button onClick={() => handleInstructor(user)} to='/dashboard/payment' className="btn btn-sm bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]" style={{ transition: '.5s' }}>Instructor</button>
                                         }
 
-                                        { user.role === 'student' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaUsers/></button> : 
-                                            <button onClick={() => handleStudent(user)} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Student</button>
-                                            }
+                                        
                                     </th>
                                     <th className='text-end'>
                                         <button onClick={() => handleDelete(user)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
