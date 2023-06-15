@@ -8,7 +8,7 @@ const useInstructorClass = () =>{
     const { refetch, data: InstructorClass = []} = useQuery({
         queryKey: ['addclass', user?.email],
         queryFn: async () =>{
-            const response = await fetch(`http://localhost:5000/addclass?email=${user.email}`)
+            const response = await fetch(`https://rythmic-server.vercel.app/addclass?email=${user.email}`)
             return response.json()
         },
       })

@@ -16,7 +16,7 @@ const ClassCard = ({ cls }) => {
 
         const bookClass = { classId: _id, className, price, seats, banner, instructor, email: user.email }
         if (user && user.email) {
-            fetch('http://localhost:5000/selectedClass', {
+            fetch('https://rythmic-server.vercel.app/selectedClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

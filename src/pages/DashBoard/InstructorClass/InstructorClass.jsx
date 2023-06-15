@@ -19,7 +19,7 @@ const InstructorClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addclass/${cls._id}`, {
+                fetch(`https://rythmic-server.vercel.app/addclass/${cls._id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

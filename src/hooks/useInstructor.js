@@ -8,7 +8,7 @@ const useInstructor = () =>{
         queryKey: ['isInstructors', user?.email],
         enabled: !!user?.email &&!loading,
         queryFn: async () =>{
-            const res = await fetch(`http://localhost:5000/users/instructor/${user?.email}`)
+            const res = await fetch(`https://rythmic-server.vercel.app/users/instructor/${user?.email}`)
             return res.json()
         },
     })

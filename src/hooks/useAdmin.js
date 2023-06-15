@@ -9,7 +9,7 @@ const useAdmin = () =>{
         enabled: !!user?.email &&!loading,
         queryFn: async () =>{
             if(user?.email){
-                const res = await fetch(`http://localhost:5000/users/admin/${user?.email}`)
+                const res = await fetch(`https://rythmic-server.vercel.app/users/admin/${user?.email}`)
             return res.json()
             }
         },
