@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const AddClass = () => {
     const { user } = useAuth()
