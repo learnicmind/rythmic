@@ -14,6 +14,8 @@ import AdminRoute from "./AdminRoute";
 import ManageClasses from "../pages/DashBoard/ManageClasses";
 import AddClass from "../pages/DashBoard/InstructorClass/AddClass";
 import InstructorClass from "../pages/DashBoard/InstructorClass/InstructorClass";
+import Update from "../pages/DashBoard/Update/Update";
+import EnrolledClasses from "../pages/DashBoard/EnrolledClasses/EnrolledClasses";
 
 
 
@@ -56,10 +58,6 @@ export const router = createBrowserRouter([
             path: 'myclasses',
             element: <MyClasses></MyClasses>
           },
-        //   {
-        //     path: 'payment',
-        //     element: <MyClasses></MyClasses>
-        //   },
           {
             path: 'allusers',
             element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
@@ -75,10 +73,16 @@ export const router = createBrowserRouter([
           {
             path: 'instructorclass',
             element: <InstructorClass></InstructorClass>
-          }        //   {
-        //     path: 'enrolledstudents',
-        //     element: <EnrolledClasses></EnrolledClasses>
-        //   }
+          },
+          {
+            path: 'classes/:id',
+            element: <Update></Update>,
+            loader: ({params}) => fetch(`https://rythmic-server.vercel.app/classes/${params.id}`)
+          },
+          {
+            path: 'enrolledclasses',
+            element: <EnrolledClasses></EnrolledClasses>
+          }
         ]
       }
 ])

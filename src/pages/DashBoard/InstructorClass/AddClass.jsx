@@ -31,7 +31,7 @@ const AddClass = () => {
                         }
                     })
 
-                    navigate('/dashboard/myclass')
+                    navigate('/dashboard/instructorclass')
                 }
             })
 

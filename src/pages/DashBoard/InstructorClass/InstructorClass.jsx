@@ -80,7 +80,7 @@ const InstructorClass = () => {
                                 <td className=''>$ {cls.price}</td>
                                 <td className='text-center'>{cls.seats}</td>
                                 <th>
-                                    <Link to='/dashboard/update' className="px-3 py-1 rounded bg-slate-900 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Update</Link>
+                                    <Link to={`/dashboard/classes/${cls._id}`} className="px-3 py-1 rounded bg-slate-900 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Update</Link>
                                 </th>
                                 <th className='text-center'>
                                     <button onClick={() => handleDelete(cls)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
