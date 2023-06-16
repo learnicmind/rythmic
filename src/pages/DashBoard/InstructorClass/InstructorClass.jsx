@@ -45,14 +45,14 @@ const InstructorClass = () => {
             <div className='mb-5 flex justify-between items-center'>
                 <h1 className='text-3xl font-semibold'>My Classes</h1>
 
-                <Link to='/dashboard/addclass' className="px-3 py-1 rounded bg-slate-900 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Add Class</Link>
+                <Link to='/dashboard/addclass' className="px-3 py-1 rounded bg-slate-800 hover:opacity-70 text-lg text-[#59dae9]" style={{ transition: '.5s' }}>Add Class</Link>
             </div>
 
             <div className="overflow-x-auto rounded-t-xl">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-lg text-white bg-slate-900'>
+                        <tr className='text-lg text-[#59dae9] bg-slate-900'>
                             <th></th>
                             <th>Class</th>
                             <th>Title</th>
@@ -80,7 +80,7 @@ const InstructorClass = () => {
                                 <td className=''>$ {cls.price}</td>
                                 <td className='text-center'>{cls.seats}</td>
                                 <th>
-                                    <Link to={`/dashboard/classes/${cls._id}`} className="px-3 py-1 rounded bg-slate-900 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Update</Link>
+                                    <Link to={`/dashboard/classes/${cls._id}`} className="px-3 py-1 rounded bg-slate-900 hover:opacity-70 text-lg text-[#59dae9]" style={{ transition: '.5s' }}>Update</Link>
                                 </th>
                                 <th className='text-center'>
                                     <button onClick={() => handleDelete(cls)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>

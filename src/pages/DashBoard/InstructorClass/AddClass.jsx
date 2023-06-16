@@ -40,7 +40,7 @@ const AddClass = () => {
         <div>
 
 
-            <div className='w-full md:mx-auto mx-5  bg-gray-300 p-12'>
+            <div className='w-full md:mx-auto mx-5  bg-slate-700 p-12'>
 
                 <div>
                     <h1 className='text-3xl font-bold text-center mb-5 pb-3 border-b-2 rounded-lg border-slate-800'>Add Class</h1>
@@ -86,8 +86,9 @@ const AddClass = () => {
 
 
 
-                        <div>
-                            <input type="submit" value="Add Class" className='w-full py-2 bg-slate-800 hover:opacity-80 rounded font-bold text-white mt-5' style={{ transition: '0.5s' }} />
+                        <div className='mt-2'>
+                            
+                            <input type="submit" value="Add class" className="btn w-full bg-[#E8E8E8]  border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]" />
                         </div>
                     </form>
                 </div>

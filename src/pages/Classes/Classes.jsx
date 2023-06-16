@@ -8,7 +8,7 @@ const Classes = () => {
     console.log(classes);
 
     return (
-        <div className="pt-20 pb-10 bg-slate-900">
+        <div className="py-10  bg-slate-900">
             <Helmet>
                 <title>RyThmic | Classes</title>
             </Helmet>

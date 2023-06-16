@@ -75,7 +75,7 @@ const MyClasses = () => {
                                     <td className='text-end'>$ {S_Class.price}</td>
                                     <td className='text-end'>{S_Class.seats}</td>
                                     <th>
-                                         <Link to='/dashboard/payment'><button className="btn btn-sm bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]"
+                                         <Link to={`/dashboard/payment/${S_Class._id}`}><button className="btn btn-sm bg-[#E8E8E8] border-0 border-[#48a5af] border-l-4 hover:bg-[#111827] hover:border-[#59dae9] text-black hover:text-[#59dae9]"
                         >Pay</button></Link>
                                     </th>
                                     <th className='text-end'>

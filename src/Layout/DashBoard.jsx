@@ -39,7 +39,7 @@ const Dashboard = () => {
                                 </>
                                 : isInstructor.instructor ?
                                     <>
-                                        <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>RyThmic</p>
+                                        <p className='text-4xl text-[#59dae9] ps-4 mb-8 border-l-2 pb-3 rounded-lg'>RyThmic</p>
                                         <li><NavLink to='/dashboard/instructorclass'><FaChalkboardTeacher />My Classes</NavLink>
                                         </li>
                                         <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> Enrolled students</NavLink></li>
