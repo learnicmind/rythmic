@@ -6,7 +6,7 @@ const Gallery = () => {
             <div className="grid md:grid-cols-2 gap-6 justify-between">
                 <div className="">
                     <h2 className="text-3xl font-bold mb-4 text-center text-[#59dae9]">Gallery</h2>
-                    <p className="text-center text-lg font-semibold">Immerse yourself in the captivating world of dance through our stunning gallery. Explore mesmerizing performances, graceful movements, and vibrant costumes captured in vivid detail. From powerful leaps and expressive gestures to the joyous energy of group routines, our gallery showcases the artistry and passion of our talented dancers. Get inspired, feel the rhythm, and experience the beauty of dance through our carefully curated collection of captivating moments. Step into our gallery and let the images transport you to a world where movement becomes an exquisite form of expression.</p>
+                    <p className="text-justify text-lg font-semibold">Immerse yourself in the captivating world of dance through our stunning gallery. Explore mesmerizing performances, graceful movements, and vibrant costumes captured in vivid detail. From powerful leaps and expressive gestures to the joyous energy of group routines, our gallery showcases the artistry and passion of our talented dancers. Get inspired, feel the rhythm, and experience the beauty of dance through our carefully curated collection of captivating moments. Step into our gallery and let the images transport you to a world where movement becomes an exquisite form of expression.</p>
                 </div>
                 <div data-aos="fade-down"
                     data-aos-easing="linear"

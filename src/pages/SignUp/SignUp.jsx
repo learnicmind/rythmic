@@ -7,7 +7,6 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 
-
 const SignUp = () => {
     const { register,reset, formState: { errors }, handleSubmit } = useForm();
 
